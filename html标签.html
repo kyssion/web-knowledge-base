@@ -1,0 +1,156 @@
+禁用 script
+<noscript></noscript>
+<script src="" defer="" async="" type="" ></script>  type-规定js脚本的类型 默认使用 text/javascript
+<!DOCTYPE HTML>
+//连接类
+<a> 7 - href- hreflang（指定被链接文档大基准语言en cn等）- type（entype，定义表单发送到服务端将如何进行编码）  
+	media-指定标记是基于什么设备    targer（_blank _self） rel-x(注意：尽管浏览器不会以任何方式使用该属性，不过搜索引擎可以利用该属性获得更多有关链接的信息。) 
+	download--指定下载的链接
+
+图连类
+<img>-当只有wid没有height的时候将进行等比例缩放- -6 src  alt（指定图片的替代文本，等同域图片） weight width
+(ismap点击这个图片,点击的坐标将作为查询字符串发送到服务器。必须在<a> 标签中使用   usemap-一个 hash 字符 ("#") 加上要使用的 <map> 元素的 name 或 id。)
+<map> 1 name 关联img中的 usemap  
+<area>9 href hreflang typt targer rel media alt-指针放在上上面所使用的元素 coords-指定形状的增加属性 shape-指定截取的形状
+<img src="planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+
+<map name="planetmap">
+  <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.gif">
+  <area shape="circle" coords="90,58,3" alt="Mercury" href="merglobe.gif">
+  <area shape="circle" coords="124,58,8" alt="Venus" href="venglobe.gif">
+</map>   
+
+
+
+
+文本类
+<header></header>   语义化头
+<nav></nav>     语义化
+<hgroup></hgroup>   语义头
+<nav></nav>    导航区
+<aside></aside>aside元素被包含在article元素中作为主要内容的附属信息部分，其中的内容可以是与当前文章有关的相关资料、标签、名次解释等。（特殊的section）
+<article></article>article元素最容易跟section和div容易混淆，其实article代表一个在文档，页面或者网站中自成一体的内容，其目的是为了让开发者独立开发或重用。譬如论坛的帖子，博客上的文章，一篇用户的评论，一个互动的widget小工具。（特殊的section）
+<section></section>section部分虽然也是独立的部分，但是它门只能算是组成整体的一部分，从属关系，article是大主体，section是构成这个大主体的一部分。本网站的全部文章都是article嵌套一个个section章节，这样能让浏览器更容易区分各个章节所包括的内容。
+section元素代表文档中的“节”或“段”，“段”可以是指一篇文章里按照主题的分段；“节”可以是指一个页面里的分组。
+section通常还带标题，虽然html5中section会自动给标题h1-h6降级，但是最好手动给他们降级。如下：
+<abbr> 语义化     简写缩写
+<address></address> 语义化     联系方式
+<article></article> 语义化     文章条款
+<aside></aside> 语义化    旁白 私话
+<strong></strong><b></b> 语义化  加粗
+<em>强调文本</em> 语义化 强调
+<bdo dir></bdo> 改变文本方向
+<cite>引用 语义化 标签定义作品（比如书籍、歌曲、电影、电视节目、绘画、雕塑等等）的标题。
+<code></code> 语义化 代码
+<del cite="" datetime=""></del> <ins>语义化-文档类型 日期
+<blockquote></blockquote> 引用自带缩进
+<footer></footer> 语义化 表示页脚
+<header></ins>语义化头
+	<hgroup></hgroup> 语义化标题组合
+<i></i>语义化 
+<nav> 语义化 定义数据连接区域
+<p></p>段落
+<br>
+<pre></pre>-预定格式化版本---就是字符是什么html文档中写的是什么输出就是什么标签同样被解析
+<q></q>-声明一个双引号短引用
+<samp> - 语义化 一个标记
+<span></span> 一部分进行配色
+<sub></sub>
+<sup></sup>
+<time></time> 语义化-表示时间
+<u></u> 语义化 突不同
+
+表单元素类
+<form></form> - 8 action-服务器ip地址 accpet-charset-表示发送到服务器使用的字符集 
+enctype-类似application/x-www-form-urlencoded这种东西 methond-get还是post 
+autocomplete-由浏览器支持进行记录输入的数据 
+name-表单的名称 novalidate-提交表单的时候不进行表单验证 target-_self _blank
+<button>- 11 form formaction formmethod formentype formtarger formnavalidate name type value autofocus display
+<input /> 
+form formaction formmethod formentype formtarger formnavalidate---html5
+autofocue-第一个有效 autocomplete display max min step表示数字进行跳跃的步数 属性适用于下面的 input 类型：number、range、date、datetime、datetime-local、month、time 和 week。
+ maxlength size-字符输入的可见宽度 multiple指定多选属性属性适用于以下 input 类型：email 和 file
+name -指定表单验证所用的正则表达式 placeholder 灰色字体表示的简短提示 readonly	readonly	readonly  required规定必须输入东西
+list -- 指定关联的datalist
+type 属性：-------------------------------------------------------------------------------------------------------------
+button	定义可点击的按钮（通常与 JavaScript 一起使用来启动脚本）。
+checkbox	定义复选框。checked -指定预选的多选框
+colorNew	定义拾色器。
+dateNew	定义 date 控件（包括年、月、日，不包括时间）。
+datetimeNew	定义 date 和 time 控件（包括年、月、日、时、分、秒、几分之一秒，基于 UTC 时区）。
+datetime-localNew	定义 date 和 time 控件（包括年、月、日、时、分、秒、几分之一秒，不带时区）。
+emailNew	定义用于 e-mail 地址的字段。
+file	定义文件选择字段和 "浏览..." 按钮，供文件上传。  accept	audio/*video/*image/*MIME_type	规定通过文件上传来提交的文件的类型。(只针对type="file")
+hidden	定义隐藏输入字段。
+image	定义图像作为提交按钮。alt height width src 
+monthNew	定义 month 和 year 控件（不带时区）。
+numberNew	定义用于输入数字的字段。
+password	定义密码字段（字段中的字符会被遮蔽）。
+radio	定义单选按钮。
+rangeNew	定义用于精确值不重要的输入数字的控件（比如 slider 控件）。
+reset	定义重置按钮（重置所有的表单值为默认值）。
+searchNew	定义用于输入搜索字符串的文本字段。
+submit	定义提交按钮。
+telNew	定义用于输入电话号码的字段。
+text	默认。定义一个单行的文本字段（默认宽度为 20 个字符）。
+timeNew	定义用于输入时间的控件（不带时区）。
+urlNew	定义用于输入 URL 的字段。
+weekNew	定义 week 和 year 控件（不带时区）。
+----------------------------------------------------------------------------------------------------------------------
+<datalist><option></option></datalist>----list 和list 进行关联进行提示选项
+<fieldset><legend></legend></fieldset>
+<select><optgroup><option></option></optgroup></select></optgroup>>
+<select></select> -7 name form autofocus multiple display size
+事件的高级写法使用dmo零级的写法直接   将参数加入进去 
+<select name="customers" onchange="showCustomer(this.value)">
+	<option value="APPLE">Apple Computer, Inc.</option>
+	<option value="BAIDU ">BAIDU, Inc</option>
+	<option value="Canon">Canon USA, Inc.</option>
+	<option value="Google">Google, Inc.</option>
+	<option value="Nokia">Nokia Corporation</option>
+	<option value="SONY">Sony Corporation of America</option>
+</select>
+
+
+<output></output>
+
+音频类
+<video><source></source></video> 9 width height src autoplay controls如果出现该属性，则向用户显示控件，比如播放按钮。 muted-静音 poster-规定正在下载的时候使用的图像 loop-循环 preload让视频在页面出现加载的时候进行加载
+<audio><source></source></audio> 6 src autoplay controls loop muted preload-auto meta none
+<embed></embed> 4  栽种 src type weight width<embed> 标签定义了一个容器，用来嵌入外部应用或者互动程序（插件）
+<source></source> 3 media src type
+<source> 标签为媒体元素（比如 <video> 和 <audio>）定义媒体资源。
+<source> 标签允许您规定可替换的视频/音频文件共浏览器根据它对媒体类型或者编解码器的支持进行选择。
+<object><param name="" value=""/>有兼容性问题 <object> data form height type 标签用于包含对象，比如图像、音频、视频、Java applets、ActiveX、PDF 以及 Flash。
+head内中
+<base>-href targer
+<link>- 6 href hreflang media type  rel（sizes当rel为icon是才有用 rel）
+<meta> -4 name -keyword description athoder content charset-定义文档编码
+<script></script> 5 async charset defer src type
+<style></style> media type 
+<title></title> 标签
+
+进度条类
+<meter></meter> 7 form value optinum量度最优 low high min max -- 两层进度条
+<progress></progress> max value
+
+动画类
+<canvas></canvas> weigh hight
+
+表格类
+<table>
+	<caption></caption> <thead></thead><tfoot></tfoot><tbody></tbody>
+	<tr><td><th>
+		<colgroup> <col span=""></colgroup> 属性关联属性 关联列属性
+		
+列表类
+<ul ><ol start=""><li></li><dl><dt><dd>
+	
+框架类
+<iframe></iframe> -
+seamless	规定 <iframe> 看起来像是父文档中的一部分。
+src			规定在 <iframe> 中显示的文档的 URL。
+srcdoc		规定页面中的 HTML 内容显示在 <iframe> 中。
+width
+height
+name		规定 <iframe> 的名称。

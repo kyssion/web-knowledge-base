@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>W3Cschool在线教程(w3cschool.cn)</title>
+		<style>
+			.droptarget {
+				float: left;
+				width: 100px;
+				height: 35px;
+				margin: 15px;
+				padding: 10px;
+				border: 1px solid #aaaaaa;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<p>在两个矩形框中来回拖动 p 元素:</p>
+		<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">拖动我!</p>
+		</div>
+		<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<p style="clear:both;"></p>
+		<p id="demo"></p>
+		<div class="droptarget"></div>
+		<script>
+			function dragStart(event) {
+				event.dataTransfer.setData("Text", event.target.id);
+			}
+
+			function dragging(event) {
+				document.getElementById("demo").innerHTML = " p 元素正在拖动";
+			}
+
+			function allowDrop(event) {
+				event.preventDefault();
+			}
+
+			function drop(event) {
+				event.preventDefault();
+				var data = event.dataTransfer.getData("Text");
+				event.target.appendChild(document.getElementById(data));
+				document.getElementById("demo").innerHTML = "p 元素已被拖动";
+			}
+		</script>
+
+	</body>
+
+</html>

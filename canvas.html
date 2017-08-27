@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#haha{
+				width: 400px;
+				height: 400px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="mycanvas"  width="100%" height="100%">
+			<div id="haha"></div>
+			<!--canvas 标签需要独立的闭合标签的原因是，假如用户的浏览器不支持 canvas 标签，canvas 显示的内容将被放入标签内-->
+		</canvas><!--在 canvas中不能使用css wid和height设置宽度和高度 会发生形变-->
+		
+		<script>
+			var mycarvas = document.getElementById("mycanvas");
+			var c_context = mycarvas.getContext("2d");
+			c_context.fillStyle="#00FFFF";
+			var a=0;
+			var b=0;
+			window.setInterval(function(){
+				c_context.strokeRect(a,b,200,200);
+				a++;
+				b++;
+			},20);
+		</script>
+	</body>
+</html>

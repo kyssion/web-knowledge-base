@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			html,
+			body {
+				height: 100%;
+				background: black;
+			}
+			
+			.wrap {
+				height: 100%;
+				position: relative;
+				transform-style: preserve-3d;
+				perspective: auto;
+				animation: mydhua 5s ease infinite;
+			}
+			
+			.box {
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin: -100px 0 0 -100px;
+				line-height: 200px;
+				text-align: center;
+				font-size: 48px;
+				color: white;
+			}
+			
+			.box1 {
+				transform: rotatey(90deg) translatez(-100px);
+				background: rgba(128, 0, 128, .5);
+			}
+			
+			.box2 {
+				transform: rotatey(90deg) translatez(100px);
+				background: rgba(255, 0, 255, .5);
+			}
+			
+			.box3 {
+				transform: rotatex(90deg) translatez(100px);
+				background: rgba(255, 153, 204, .5);
+			}
+			
+			.box4 {
+				transform: rotatex(90deg) translatez(-100px);
+				background: rgba(0, 204, 255, .5);
+			}
+			
+			.box5 {
+				transform: translatez(-100px);
+				background: rgba(153, 204, 255, .5);
+			}
+			
+			.box6 {
+				transform: translatez(100px);
+				background: rgba(0, 255, 255, .5);
+			}
+			
+			@-webkit-keyframes mydhua {
+				0% {
+					transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+					transform-origin: center center;
+				}
+				100% {
+					transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+					transform-origin: center center;
+				}
+			}
+			
+			@-moz-keyframes mydhua {
+				0% {
+					transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+					transform-origin: center center;
+				}
+				100% {
+					transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+					transform-origin: center center;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<div class="box1 box">
+				1</div>
+			<div class="box2 box">
+				2</div>
+			<div class="box3 box">
+				3</div>
+			<div class="box4 box">
+				4</div>
+			<div class="box5 box">
+				5</div>
+			<div class="box6 box">
+				6</div>
+		</div>
+	</body>
+
+</html>

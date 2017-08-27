@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- -->
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#parent {
+				width: 1400px;
+				margin: auto;
+				position: relative;
+			}
+			
+			#in_parent {
+				position: absolute;
+				width: 1430px;
+				height: 720px;
+				border: 3px solid brown;
+				overflow: auto;
+			}
+			
+			#parent img {
+				width: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="parent">
+			<div id="in_parent">
+
+			</div>
+		</div>
+	</body>
+	<script>
+		window.onload = function() {
+			var in_parent = document.getElementById("in_parent");
+			var d_width = 280;
+			var jkll=0;
+			//创建相关存在一屏数据的数组
+			function createsomeNode() {
+				var node_list = new Array();
+				for(var i = 0; i < 20; i++) {
+					var Adiv = document.createElement("div");
+					Adiv.style.width = d_width - 6 + "px";
+					var a = parseInt(Math.random() * 300 + 50, 10);
+					Adiv.style.height = a - 6 + "px";
+					Adiv.style.border = "1px solid brown"
+					Adiv.style.margin = "2px";
+					Adiv.style.position = "absolute";
+					Adiv.style.background="url(../img/"+parseInt(Math.random()*9)+".jpg)";
+					console.log(parseInt(Math.random() * 300 + 50, 10));
+					Adiv.style.display = "inline-block";
+					var text = document.createTextNode(jkll);
+					jkll++;
+					Adiv.appendChild(text);
+					node_list[i] = Adiv;
+				}
+				return node_list;
+			}
+			var last_node = new Array();
+
+			function all() {
+				var node_list = createsomeNode();
+				for(var i = 0; i < 20; i++) {
+					var mynode = chuli(node_list[i]);
+					in_parent.appendChild(mynode);
+				}
+			}
+			all();
+			function chuli(nodejkl) {
+				var j = 0;
+				for(var i = 0; i < 5; i++) {
+					if(last_node[i] == undefined) {
+						nodejkl.style.left = i * 280 + "px";
+						nodejkl.style.top = 0 + "px";
+						last_node[i] = nodejkl;
+						return nodejkl;
+					} else {
+						if(getTheInt(last_node[j].style.height) + getTheInt(last_node[j].offsetTop) > getTheInt(last_node[i].style.height) + getTheInt(last_node[i].offsetTop)) {
+							j = i;
+						}
+					}
+				}
+				nodejkl.style.left = last_node[j].style.left;
+				nodejkl.style.top = (getTheInt(last_node[j].offsetTop) + getTheInt(last_node[j].style.height) + 2) + "px";
+				last_node[j] = nodejkl;
+				return nodejkl;
+			}
+			in_parent.addEventListener("scroll", function() {
+				if(in_parent.scrollTop == in_parent.scrollHeight - in_parent.clientHeight) {
+					all();
+				}
+			}, false);
+		}
+
+		function getTheInt(str) {
+			return window.parseInt(str, 10);
+		}
+	</script>
+
+</html>

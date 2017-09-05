@@ -81,6 +81,9 @@ no-repeat	该模式只显示一次（不重复）。
 
 context.fillStyle=pattern;
 //9.图像数据---指的是一次绘画的效果
+context.drawImage(img,0,0,0,0,0,0,0,0);//这个方法有三种类型可以让起始位置+重点位置+元图像
+																			//起始+终止+自定义宽高
+																			//截取元图像的位置+宽高+映射位置+宽高
 var image=context.getImageData(1,2,3,4);//表示获得图像数据从1,2起始宽度为3高度为4
 var image=context.createImageData(image);//创建一个多大的区域
 var image=context.createImageData(1,2);
@@ -132,10 +135,10 @@ myimage.onload=function(){
 	mingliang(needcontext,10);
 }
 //canvas转成Image
-var image = new Image();  
-// canvas.toDataURL 返回的是一串Base64编码的URL，当然,浏览器自己肯定支持  
-// 指定格式 PNG  
-    image.src = canvas.toDataURL("image/png");  
+var image = new Image();
+// canvas.toDataURL 返回的是一串Base64编码的URL，当然,浏览器自己肯定支持
+// 指定格式 PNG
+    image.src = canvas.toDataURL("image/png");
 //canvas   全局属性
 
 context.globalAlpha=0;//设置全局透明度
